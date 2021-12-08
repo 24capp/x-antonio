@@ -1,0 +1,84 @@
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		while(true) {
+	System.out.println("Benvenuto nel Tritolo Bar! Come ti chiami?");	
+	
+	Scanner nome = new Scanner(System.in);
+	String nomeCliente = nome.nextLine();
+	System.out.println("Benvenuto " + nomeCliente);			
+	
+	System.out.println("Quanti anni hai?");	
+	
+	
+	Scanner anni = new Scanner(System.in);
+	
+	int anniCliente= anni.nextInt();
+	
+	if(anniCliente<18) {
+		System.out.println("Mi dispiace, " + nomeCliente + " sei minorenne e non posso venderti alcolici");
+	
+		break;  
+	}
+	
+	
+	if(anniCliente>=75) {
+	   System.out.println("Ti consiglio di bere poco! In ogni caso, cosa desideri " + nomeCliente + ("? Posso consigliarti il nostro migliore (nonchè unico) cocktail della casa") );	
+	continue;
+	 
+	}
+
+	if(anniCliente>=18 && anniCliente<75) {
+	System.out.println("Perfetto " + nomeCliente + ("!") + " Posso consigliarti il nostro migliore (nonchè unico) cocktail della casa!");
+	}
+	
+	System.out.println("Se vuoi provarlo premi 0, se vuoi completare premi un altro numero");
+    
+    
+		Scanner lista = new Scanner(System.in);	     		
+		int tasto = lista.nextInt();
+	     
+		
+	if(tasto!=0) {
+		  	  System.out.println("Arrivederci");
+		     }
+		   	   
+		 
+	     if(tasto==0) {
+	      System.out.println("Magnifico! Il nostro cocktail della casa è un Gin Tonic al prezzo di 9 euro, quanti desideri acquistarne?");
+	     }
+	      
+	    
+	    int cock1= lista.nextInt();	     
+	    System.out.println("Grande! Ti preparo subito " + cock1 + " Tritolo Tonic!");
+	     
+	    int prezzo = cock1*9; 
+		System.out.println("Mi devi " + prezzo + (" euro, con che banconota vorresti pagare?"));
+	    	   
+		int banconota = lista.nextInt();	
+		float resto = banconota - prezzo;
+		
+		if(banconota<prezzo) {
+		System.out.println("Questi soldi non bastano");
+		}
+		
+		if(banconota%prezzo!=0) {
+	    System.out.println("Ti devo " + resto +  (" euro di resto"));
+		}
+		
+		if(banconota%prezzo==0) {
+			System.out.println("Hai i soldi precisi, non ti devo del resto");
+		}
+		
+		System.out.println("Se vuoi ordinare di nuovo clicca 0");
+		int risposta = lista.nextInt();
+		if (risposta != 0) {
+			break;
+		}
+		
+	}
+}
+}
